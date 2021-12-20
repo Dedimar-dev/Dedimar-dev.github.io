@@ -38,7 +38,6 @@ export default function ModalProdutoCadastroEdicao() {
 
   function limparInputs() {
       setDadosProduto({
-          ...dadosProduto,
           nome: '',
           descricao: '',
           quantidade:  '',
@@ -89,7 +88,7 @@ export default function ModalProdutoCadastroEdicao() {
                       onClick={() => {
                           limparInputs();
                           setModalEdicaoProduto(false);
-                          setModalCadastroProduto(false)
+                          setModalCadastroProduto(false);
                       }}
                   >
                       X

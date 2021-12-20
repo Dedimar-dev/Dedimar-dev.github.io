@@ -12,6 +12,7 @@ function Tabela() {
         condicao, 
         setCondicao,
         setModalEdicaoProduto,
+        setModalCadastroProduto,
         dadosTodosProdutos, 
         setDadosTodosProdutos,
         modalEdicaoProduto,
@@ -57,6 +58,7 @@ function Tabela() {
                                     style={{ cursor: 'pointer' }}
                                     onClick={(e) => {
                                         setModalEdicaoProduto(true);
+                                        setModalCadastroProduto(false);
                                         setId(Number(e.target.id));
                                     }}
                                     className="edit-icon"
