@@ -1,0 +1,33 @@
+.div-ifood {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 800px;
+  min-height: 100vh;
+}
+
+.div-ifood p {
+  color: #fff;
+  font-size: 100px;
+  position: fixed;
+  top: 30%;
+}
+
+.btn-add-produto {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px black;
+  position: fixed;
+  bottom: 10px;
+  right: 54.5%;
+  background: rgb(204, 33, 33);
+  color: #fff;
+}
