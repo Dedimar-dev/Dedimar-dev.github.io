@@ -38,6 +38,7 @@ export default function ModalProdutoCadastroEdicao() {
 
   function limparInputs() {
       setDadosProduto({
+          ...dadosProduto,
           nome: '',
           descricao: '',
           quantidade:  '',
