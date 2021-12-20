@@ -92,7 +92,6 @@ async function deletarProduto(id, setCondicao, setDadosTodosProdutos) {
       }
     });
 
-    const resposta = await pedido.json();
     setCondicao(false);
     listarProdutos(setDadosTodosProdutos);
 

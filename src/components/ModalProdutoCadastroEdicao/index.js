@@ -32,7 +32,7 @@ export default function ModalProdutoCadastroEdicao() {
                     valor: produtoClicado.valor,
                 });
             }
-    },[modalEdicaoProduto])
+    },[modalEdicaoProduto, dadosProduto, dadosTodosProdutos, id, setDadosProduto])
 
 
 

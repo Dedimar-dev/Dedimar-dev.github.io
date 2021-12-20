@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import './tabela.css';
 import editar from '../../assets/icons8-editar2.svg';
 import excluir from '../../assets/icons8-lixo4.svg';
@@ -20,11 +20,11 @@ function Tabela() {
 
     useEffect(() => {
         listarProdutos(setDadosTodosProdutos);
-    }, []);
+    }, [,setDadosTodosProdutos]);
 
     useEffect(() => {
         listarProdutos(setDadosTodosProdutos);
-    }, [condicao, modalCadastroProduto, modalEdicaoProduto]);
+    }, [condicao, modalCadastroProduto, modalEdicaoProduto, setDadosTodosProdutos]);
 
     return (
         <div className="table">
