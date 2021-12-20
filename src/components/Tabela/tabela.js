@@ -20,7 +20,7 @@ function Tabela() {
 
     useEffect(() => {
         listarProdutos(setDadosTodosProdutos);
-    }, [,setDadosTodosProdutos]);
+    }, [setDadosTodosProdutos]);
 
     useEffect(() => {
         listarProdutos(setDadosTodosProdutos);

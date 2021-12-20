@@ -85,7 +85,7 @@ async function listarProdutos(setDadosTodosProdutos) {
 async function deletarProduto(id, setCondicao, setDadosTodosProdutos) {
 
   try {
-    const pedido = await fetch(`${url_Base}/${id}`, {
+    await fetch(`${url_Base}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
