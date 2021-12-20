@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Tabela from './components/Tabela/tabela';
+import DivIfood from './components/divIfood';
+import ModalProdutoCadastroEdicao from './components/ModalProdutoCadastroEdicao';
+import { GlobalProvider } from './context/GlobalContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <GlobalProvider>
+      <div className="App">
+        <DivIfood/>
+        <Tabela/>  
+        <ModalProdutoCadastroEdicao/> 
     </div>
+    </GlobalProvider>
+    
   );
 }
 
