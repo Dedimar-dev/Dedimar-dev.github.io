@@ -1,6 +1,5 @@
-.backgorund_card_cobranca_modal {
+.backgorund_card_produto_modal {
     margin: 0rem;
-    margin-left: 11rem;
     display: none;
     justify-content: center;
     align-items: center;
@@ -15,7 +14,7 @@
     bottom: 0;
 }
   
-.card_cobranca_modal {
+.card_produto_modal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +30,7 @@
   gap: 3rem;
 }
 
-.titulo_cobranca {
+.titulo_produto {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -58,7 +57,7 @@
   width: 1.8rem;
 }
 
-.container_cobranca_input_nome {
+.container_produto_input_nome {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,7 +75,7 @@
   color: #3F3F55;
 }
 
-.cobranca_input_nome_cadastro {
+.produto_input_nome_cadastro {
   all: unset;
   box-sizing: border-box;
   display: flex;
@@ -90,7 +89,7 @@
   border-radius: 0.8rem;
 }
 
-.container_cobranca_input_descricao {
+.container_produto_input_descricao {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,7 +107,7 @@
   color: #3F3F55;
 }
 
-.cobranca_input_descricao_cadastro {
+.produto_input_descricao_cadastro {
   display: flex;
   align-items: center;
   width: 36rem;
@@ -119,7 +118,7 @@
   border-radius: 0.8rem;
 }
 
-.containers_cobranca_vencimento_valor {
+.containers_produto_vencimento_valor {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,15 +132,15 @@
   color: #3F3F55;
 }
 
-.container_cobranca_input_vencimento,
-.container_cobranca_input_valor {
+.container_produto_input_vencimento,
+.container_produto_input_valor {
   display: flex;
   flex-direction: column;
   width: 16.5rem;
 }
 
-.cobranca_input_valor_cadastro,
-.cobranca_input_vencimento_cadastro {
+.produto_input_valor_cadastro,
+.produto_input_vencimento_cadastro {
   width: 16.5rem;
   height: 4.4rem;
   background: #FFFFFF;
@@ -151,7 +150,7 @@
   padding: 1rem 1.2rem;
 }
 
-.cobranca_input_valor_cadastro {
+.produto_input_valor_cadastro {
   padding: 1rem 3rem;
 }
 
@@ -163,7 +162,7 @@
   color: #3F3F55;
 }
 
-.container_cobranca_buttons_confirmar {
+.container_produto_buttons_confirmar {
   display: flex;
   align-items: center;
   width: 36rem;
@@ -172,8 +171,8 @@
   gap: 3rem;
 }
 
-.cobranca_button_cancelar,
-.cobranca_button_confirmar {
+.produto_button_cancelar,
+.produto_button_confirmar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,19 +192,19 @@
   cursor: pointer;
 }
 
-.cobranca_button_cancelar {
+.produto_button_cancelar {
   background: #dddde2;
   color: #0E8750;
 }
 
-.cobranca_button_confirmar {
+.produto_button_confirmar {
   background: #da1001;
   color: #FFFFFF;
 }
 
-.card_cobranca_modal label,
-.card_cobranca_modal span,
-.card_cobranca_modal input {
+.card_produto_modal label,
+.card_produto_modal span,
+.card_produto_modal input {
   font-family: 'Nunito', sans-serif;
   font-size: 1.4rem;
   font-style: normal;
