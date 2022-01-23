@@ -7,11 +7,10 @@
   min-height: 100vh;
 }
 
-.div-ifood p {
-  color: #fff;
-  font-size: 100px;
+.div-ifood img {
+  width: 300px;
   position: fixed;
-  top: 30%;
+  top: 20%;
 }
 
 .btn-add-produto {

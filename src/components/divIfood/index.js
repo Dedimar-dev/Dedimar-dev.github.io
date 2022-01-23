@@ -1,5 +1,6 @@
 import './style.css';
 import useGlobal from '../../hooks/useGlobal';
+import logo_ifood from '../../assets/logo_ifood.svg';
 
 export default function DivIfood() {
   const {
@@ -10,7 +11,7 @@ export default function DivIfood() {
   } = useGlobal();
   return (
     <div className="div-ifood">
-      <p>iFood</p>
+      <img src={logo_ifood} alt="" />
       <button
         className='btn-add-produto '
         onClick={() => {
