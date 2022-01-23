@@ -23,22 +23,15 @@ export default function ModalProdutoCadastroEdicao() {
 
     useEffect(() => {
         if (modalEdicaoProduto) {
-            buscaDadosProduto();
+            const produtoClicado = dadosTodosProdutos.find((produto) => produto.id === id);
+            setDadosProduto({
+                nome: produtoClicado.nome,
+                descricao: produtoClicado.descricao,
+                quantidade: produtoClicado.quantidade,
+                valor: produtoClicado.valor,
+            });
         }
-    }, [modalEdicaoProduto])
-
-
-    const buscaDadosProduto = () => {
-        const produtoClicado = dadosTodosProdutos.find((produto) => produto.id === id);
-        setDadosProduto({
-            ...dadosProduto,
-            nome: produtoClicado.nome,
-            descricao: produtoClicado.descricao,
-            quantidade: produtoClicado.quantidade,
-            valor: produtoClicado.valor,
-        });
-    }
-
+    }, [modalEdicaoProduto, dadosTodosProdutos, id, setDadosProduto])
 
     function limparInputs() {
         setDadosProduto({
