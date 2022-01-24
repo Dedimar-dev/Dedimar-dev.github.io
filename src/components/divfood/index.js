@@ -1,17 +1,33 @@
 import './style.css';
 import useGlobal from '../../hooks/useGlobal';
-import logo_ifood from '../../assets/logo_ifood.svg';
+import { useEffect } from 'react/cjs/react.development';
 
-export default function DivIfood() {
+export default function Divfood() {
+
+  useEffect(() => {
+    desenhaTexto()
+  },[]);
+
   const {
     setModalCadastroProduto,
     setModalEdicaoProduto,
     dadosProduto,
     setDadosProduto,
   } = useGlobal();
+
+
+  function desenhaTexto() {
+    const tela = document.querySelector('canvas');
+    const pincel = tela.getContext('2d');
+
+    pincel.font = '130px Georgia';
+    pincel.fillStyle = '#fff';
+    pincel.fillText('DSFood', 250, 120);
+  }
+
   return (
-    <div className="div-ifood">
-      <img src={logo_ifood} alt="" />
+    <div className="div-food">
+      <canvas width="1000" height="900"></canvas>
       <button
         className='btn-add-produto '
         onClick={() => {

@@ -1,5 +1,5 @@
 import Tabela from './components/Tabela/tabela';
-import DivIfood from './components/divIfood';
+import Divfood from './components/divfood';
 import ModalProdutoCadastroEdicao from './components/ModalProdutoCadastroEdicao';
 import { GlobalProvider } from './context/GlobalContext';
 
@@ -7,12 +7,12 @@ function App() {
   return (
     <GlobalProvider>
       <div className="App">
-        <DivIfood/>
-        <Tabela/>  
-        <ModalProdutoCadastroEdicao/> 
-    </div>
+        <Divfood />
+        <Tabela />
+        <ModalProdutoCadastroEdicao />
+      </div>
     </GlobalProvider>
-    
+
   );
 }
 
