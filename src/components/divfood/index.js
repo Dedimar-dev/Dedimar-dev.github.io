@@ -1,6 +1,6 @@
 import './style.css';
 import useGlobal from '../../hooks/useGlobal';
-import { useEffect } from 'react/cjs/react.development';
+import { useEffect } from 'react';
 
 export default function Divfood() {
 
