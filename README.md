@@ -7,8 +7,7 @@ Um site para cadastro de produtos (Fast food). Desenvolvido para treinar integra
 - Edição de produto
 - Exclusão de produto
 
-
-<img src="https://user-images.githubusercontent.com/85937748/150852567-7ca0ca09-9753-4391-bd0a-4750aa797c8d.png"/>
+![mini_delivery_front](https://user-images.githubusercontent.com/85937748/150993287-45009fe7-70b7-424b-807d-35526a84a17a.png)
 
 <div align="center">
   <a href="https://mini-delivery.netlify.app/">Clique para visitar o projeto</a>
