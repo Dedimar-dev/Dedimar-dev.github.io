@@ -5,6 +5,7 @@ import excluir from '../../assets/icons8-lixo4.svg';
 import ModalConfirmar from "../ModalConfirmar";
 import { listarProdutos } from '../../services/apiProdutos';
 import useGlobal from "../../hooks/useGlobal";
+import Variants from "../Variants";
 
 function Tabela() {
     const {
@@ -28,7 +29,7 @@ function Tabela() {
     }, [condicao, modalCadastroProduto, modalEdicaoProduto, setDadosTodosProdutos]);
 
     return (
-        <div className="table">
+          <div className="table">
             <div className="table-head">
                 <div className="column-title">
                     Nome
@@ -43,9 +44,8 @@ function Tabela() {
                     Quantidade
                 </div>
             </div>
-
             <div className="table-body">
-
+               { dadosTodosProdutos.length === 0 && <Variants/>}
                 {dadosTodosProdutos && dadosTodosProdutos.map(info => {
                     return (
                         <div key={info.id} className="table-line">
@@ -88,7 +88,7 @@ function Tabela() {
                 }
             </div>
         </div>
-
+    
     )
 }
 
