@@ -42,10 +42,17 @@ export default function ModalProdutoCadastroEdicao() {
         });
     };
 
+    const trataNomeProduto = (nome) => {
+        nome = nome.trim();
+        nome = nome[0].toLowerCase() + nome.substr(1)
+
+        return nome;
+    }
+    
     const handleSubmit = () => {
         if (modalCadastroProduto) {
             cadastrarProduto(
-                dadosProduto,
+                {...dadosProduto, nome: trataNomeProduto(dadosProduto.nome)},
                 setDadosTodosProdutos,
                 setModalCadastroProduto,
                 setModalEdicaoProduto,
@@ -56,7 +63,7 @@ export default function ModalProdutoCadastroEdicao() {
         if (modalEdicaoProduto) {
             atualizarProduto(
                 id,
-                dadosProduto,
+                {...dadosProduto, nome: trataNomeProduto(dadosProduto.nome)},
                 setDadosTodosProdutos,
                 setModalEdicaoProduto,
                 setModalCadastroProduto,
