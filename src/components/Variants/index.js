@@ -4,7 +4,13 @@ import Stack from '@mui/material/Stack';
 
 const criarSkeleton = () => {
   return (
-    <Skeleton animation="wave" variant="text" width={813} height={80} />
+    <Skeleton 
+      display="flex"
+      animation="wave" 
+      variant="text" 
+      width={813} 
+      height={80} 
+    />
   )
 }
 
