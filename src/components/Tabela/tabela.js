@@ -3,7 +3,8 @@ import './tabela.css';
 import editar from '../../assets/icons8-editar2.svg';
 import excluir from '../../assets/icons8-lixo4.svg';
 import ModalConfirmar from "../ModalConfirmar";
-import { listarProdutos } from '../../services/apiProdutos';
+import { listarProdutos} from '../../services/apiProdutos';
+import trataNomeProduto from "../../utils/trataNomeProduto";
 import useGlobal from "../../hooks/useGlobal";
 import Variants from "../Variants";
 
@@ -47,9 +48,10 @@ function Tabela() {
             <div className="table-body">
                { dadosTodosProdutos.length === 0 && <Variants/>}
                 {dadosTodosProdutos && dadosTodosProdutos.map(info => {
+                    const nome = trataNomeProduto(info.nome)
                     return (
                         <div key={info.id} className="table-line">
-                            <div className="line-items">{info.nome}</div>
+                            <div className="line-items">{nome}</div>
                             <div className="line-items">{info.descricao}</div>
                             <div className="line-items">{(info.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</div>
                             <div className="line-items">{info.quantidade}</div>
