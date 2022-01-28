@@ -74,6 +74,24 @@ async function listarProdutos(setDadosTodosProdutos) {
       }
     });
 
+    const dados = await response.json();
+    setDadosTodosProdutos(dados)
+  } catch ({ message }) {
+    console.log(message)
+  }
+
+}
+
+async function listarProdutosPesquisado(setDadosTodosProdutos, nome) {
+
+  try {
+    const response = await fetch(`${url_Base}/${nome}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
     const dados = await response.json()
     setDadosTodosProdutos(dados)
   } catch ({ message }) {
@@ -81,6 +99,7 @@ async function listarProdutos(setDadosTodosProdutos) {
   }
 
 }
+
 
 async function deletarProduto(id, setCondicao, setDadosTodosProdutos) {
 
@@ -105,5 +124,6 @@ export {
   cadastrarProduto,
   atualizarProduto,
   listarProdutos,
+  listarProdutosPesquisado,
   deletarProduto,
 }

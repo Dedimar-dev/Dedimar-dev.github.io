@@ -1,22 +1,35 @@
 import './style.css';
 import useGlobal from '../../hooks/useGlobal';
 import { useEffect } from 'react';
+import { listarProdutos, listarProdutosPesquisado } from '../../services/apiProdutos';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Divfood() {
 
   useEffect(() => {
     desenhaTexto()
-  },[]);
+  }, []);
 
   const {
     setModalCadastroProduto,
     setModalEdicaoProduto,
     dadosProduto,
     setDadosProduto,
+    setDadosTodosProdutos
   } = useGlobal();
 
+  const pesquisarProduto = (event) => {
+    let valorInput = event.target.value.trim();
 
-  function desenhaTexto() {
+    if (valorInput.length > 0) {
+        listarProdutosPesquisado(setDadosTodosProdutos, valorInput);
+    } else {
+        listarProdutos(setDadosTodosProdutos); 
+    }
+   
+  }
+
+  const desenhaTexto = () => {
     const tela = document.querySelector('canvas');
     const pincel = tela.getContext('2d');
 
@@ -27,6 +40,17 @@ export default function Divfood() {
 
   return (
     <div className="div-food">
+      <div className="div-pesquisa">
+        <SearchIcon fontSize="large" className="lupa"/>
+        <label htmlFor="pesquisa">Pesquisar Produto</label>
+        <input 
+          id="pesquisa" 
+          type="text" 
+          onChange={pesquisarProduto} 
+          placeholder="Sanduíche"
+        />
+      </div>
+     
       <canvas width="1000" height="900"></canvas>
       <button
         className='btn-add-produto '
