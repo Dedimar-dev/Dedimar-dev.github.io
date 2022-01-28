@@ -5,6 +5,7 @@ import {
     cadastrarProduto,
     atualizarProduto,
 } from '../../services/apiProdutos';
+import trataNomeProduto from "../../utils/trataNomeProduto";
 
 export default function ModalProdutoCadastroEdicao() {
     const {
@@ -25,7 +26,7 @@ export default function ModalProdutoCadastroEdicao() {
         if (modalEdicaoProduto) {
             const produtoClicado = dadosTodosProdutos.find((produto) => produto.id === id);
             setDadosProduto({
-                nome: produtoClicado.nome,
+                nome: trataNomeProduto(produtoClicado.nome),
                 descricao: produtoClicado.descricao,
                 quantidade: produtoClicado.quantidade,
                 valor: produtoClicado.valor,
@@ -42,17 +43,10 @@ export default function ModalProdutoCadastroEdicao() {
         });
     };
 
-    const trataNomeProduto = (nome) => {
-        nome = nome.trim();
-        nome = nome[0].toLowerCase() + nome.substr(1)
-
-        return nome;
-    }
-    
     const handleSubmit = () => {
         if (modalCadastroProduto) {
             cadastrarProduto(
-                {...dadosProduto, nome: trataNomeProduto(dadosProduto.nome)},
+                dadosProduto,
                 setDadosTodosProdutos,
                 setModalCadastroProduto,
                 setModalEdicaoProduto,
@@ -63,7 +57,7 @@ export default function ModalProdutoCadastroEdicao() {
         if (modalEdicaoProduto) {
             atualizarProduto(
                 id,
-                {...dadosProduto, nome: trataNomeProduto(dadosProduto.nome)},
+                dadosProduto,
                 setDadosTodosProdutos,
                 setModalEdicaoProduto,
                 setModalCadastroProduto,
