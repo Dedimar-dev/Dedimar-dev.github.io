@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import './tabela.css';
+import './style.css';
 import editar from '../../assets/icons8-editar2.svg';
 import excluir from '../../assets/icons8-lixo4.svg';
 import ModalConfirmar from "../ModalConfirmar";
