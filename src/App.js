@@ -1,5 +1,5 @@
 import Tabela from './components/Tabela';
-import DivFood from './components/DivFood/index';
+import DivFood from './components/DivFood';
 import ModalProdutoCadastroEdicao from './components/ModalProdutoCadastroEdicao';
 import Header from './components/Header';
 import { GlobalProvider } from './context/GlobalContext';

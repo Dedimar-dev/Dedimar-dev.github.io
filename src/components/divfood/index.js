@@ -26,7 +26,7 @@ export default function DivFood() {
 
   return (
     <div className="div-food">
-     
+ 
       <canvas width="1000" height="900"></canvas>
       <button
         className='btn-add-produto '
