@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 8rem;
+  position: fixed;
+  top: 0;
+  background:rgb(197, 6, 6);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0,0.8);
+  z-index: 1;
+}
+
+header img {
+  width: 5rem;
+  margin-left: 1rem;
+}
+
+.div-pesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  gap: 1rem;
+ }
+ 
+ .div-pesquisa input {
+   all: unset;
+   box-sizing: border-box;
+   border: 1px solid silver;
+   border-radius: 0.5rem;
+   background-color: #fff;
+   padding: 1rem;
+   color: #000;
+   width: 40rem;
+ }
+ 
+ .lupa {
+   position: absolute;
+   right: 1rem;
+   color: #000;
+ }
