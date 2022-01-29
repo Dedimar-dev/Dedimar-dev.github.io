@@ -2,7 +2,7 @@ import './style.css';
 import useGlobal from '../../hooks/useGlobal';
 import { useEffect } from 'react';
 
-function Divfood() {
+function DivFood() {
 
   useEffect(() => {
     desenhaTexto()
@@ -47,4 +47,4 @@ function Divfood() {
     </div>
   );
 }
-export default Divfood;
+export default DivFood;
