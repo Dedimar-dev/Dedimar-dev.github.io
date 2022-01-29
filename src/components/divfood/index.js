@@ -12,7 +12,7 @@ function Divfood() {
     setModalCadastroProduto,
     setModalEdicaoProduto,
     dadosProduto,
-    setDadosProduto,
+    setDadosProduto
   } = useGlobal();
 
   const desenhaTexto = () => {
