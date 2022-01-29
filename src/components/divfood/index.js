@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { listarProdutos, listarProdutosPesquisado } from '../../services/apiProdutos';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function Divfood() {
+function Divfood() {
 
   useEffect(() => {
     desenhaTexto()
@@ -15,19 +15,7 @@ export default function Divfood() {
     setModalEdicaoProduto,
     dadosProduto,
     setDadosProduto,
-    setDadosTodosProdutos
   } = useGlobal();
-
-  const pesquisarProduto = (event) => {
-    let valorInput = event.target.value.trim();
-
-    if (valorInput.length > 0) {
-        listarProdutosPesquisado(setDadosTodosProdutos, valorInput);
-    } else {
-        listarProdutos(setDadosTodosProdutos); 
-    }
-   
-  }
 
   const desenhaTexto = () => {
     const tela = document.querySelector('canvas');
@@ -40,16 +28,6 @@ export default function Divfood() {
 
   return (
     <div className="div-food">
-      <div className="div-pesquisa">
-        <SearchIcon fontSize="large" className="lupa"/>
-        <label htmlFor="pesquisa">Pesquisar Produto</label>
-        <input 
-          id="pesquisa" 
-          type="text" 
-          onChange={pesquisarProduto} 
-          placeholder="Sanduíche"
-        />
-      </div>
      
       <canvas width="1000" height="900"></canvas>
       <button
@@ -63,9 +41,7 @@ export default function Divfood() {
             descricao: '',
             quantidade: '',
             valor: '',
-
           })
-
         }}
       >
         Adicionar Produto
@@ -73,3 +49,4 @@ export default function Divfood() {
     </div>
   );
 }
+export default Divfood;

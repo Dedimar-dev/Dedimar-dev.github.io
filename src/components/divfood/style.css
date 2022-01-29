@@ -29,31 +29,3 @@
   background: rgb(204, 33, 33);
   color: #fff;
 }
-
-.div-pesquisa {
- display: flex;
- align-items: center;
- justify-content: center;
- font-size: 2rem;
- color: #fff;
- position: fixed;
- top: 4rem;
- gap: 1rem;
-}
-
-.div-pesquisa input {
-  all: unset;
-  box-sizing: border-box;
-  border: 1px solid silver;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  padding: 1rem;
-  color: #000;
-  width: 40rem;
-}
-
-.lupa {
-  position: absolute;
-  right: 1rem;
-  color: #000;
-}
