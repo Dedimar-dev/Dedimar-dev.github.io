@@ -1,8 +1,6 @@
 import './style.css';
 import useGlobal from '../../hooks/useGlobal';
 import { useEffect } from 'react';
-import { listarProdutos, listarProdutosPesquisado } from '../../services/apiProdutos';
-import SearchIcon from '@mui/icons-material/Search';
 
 function Divfood() {
 
