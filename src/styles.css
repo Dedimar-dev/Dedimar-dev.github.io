@@ -21,11 +21,17 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-.App{
+.Route{
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: rgba(255, 0, 0);
   min-height: 100vh;
   min-height: 100vw;
+}
+
+
+label {
+  font-size: 1.7rem;
+  font-weight: bold;
 }
