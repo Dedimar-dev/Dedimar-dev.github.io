@@ -1,0 +1,82 @@
+.container-cadastro_senha {
+  display: flex;
+  align-items: center;
+  background-color: rgb(211, 24, 24);
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url('../../assets/cadastro_senha.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-cadastro_senha-titulo {
+  width: 50rem;
+  font-size: 8rem;
+  margin-left: 10rem;
+  text-shadow: 0.1rem 0.1rem 2rem black;
+  color: #fff;
+}
+
+.div-form-cadastro_senha {
+  display: flex;
+  flex-direction: column;
+  align-items:left;
+  justify-content: center;
+}
+
+.form-cadastro_senha {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  position: fixed;
+  right: 20rem;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 0.7rem;
+  width: 45rem;
+  height: 55rem;
+  padding-bottom: 2rem;
+  color: rgb(0, 0, 0);
+  gap: 4rem;
+}
+
+.div-form-titulo {
+  font-size: 1.7rem;
+}
+
+.div-form-senha {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.7rem;
+  gap: 1rem;
+}
+
+.form-cadastro_senha input {
+  all: unset;
+  box-sizing: border-box;
+  border: 0.2rem solid rgb(138, 130, 130);
+  border-radius: 0.5rem;
+  width: 40rem;
+  padding: 0.8rem;
+  background-color: #fff;
+}
+
+.form-cadastro_senha input:focus {
+  border: 0.3rem solid rgb(102, 95, 95);
+  box-shadow: 0.1rem 0.1rem 0.7rem black;
+}
+
+.form-cadastro_senha button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  background-color: rgb(43, 43, 107);
+  color: #fff;
+  font-size: 1.4rem;
+  width: 40rem;
+  padding: 1.5rem;
+}
+
