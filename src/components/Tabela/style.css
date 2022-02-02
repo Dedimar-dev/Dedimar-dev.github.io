@@ -84,13 +84,14 @@
 
 .div-confirm-delete {
     position: absolute;
-    right: 2rem;
+    top: 3rem;
+    right: 0rem;
 }
 
 .seta {
     position: relative;
-    left: 0.1rem;
-    top: 0.1rem;
+    left: 2rem;
+    top: 1rem;
 }
 
 .div-buttons {

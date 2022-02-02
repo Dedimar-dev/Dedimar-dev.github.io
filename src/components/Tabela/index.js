@@ -18,7 +18,7 @@ function Tabela() {
         dadosTodosProdutos, 
         setDadosTodosProdutos,
         modalEdicaoProduto,
-        modalCadastroProduto
+        modalCadastroProduto,
       } = useGlobal();
 
     useEffect(() => {
