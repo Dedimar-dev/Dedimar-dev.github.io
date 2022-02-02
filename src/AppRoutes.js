@@ -3,25 +3,16 @@ import Login from './Pages/Login';
 import CadastroUsuario from './Pages/CadastroUsuario';
 import CadastroUsuarioSenha from './Pages/CadastroUsuarioSenha';
 import { GlobalProvider } from './context/GlobalContext';
-import useGlobal from './hooks/useGlobal';
-
 
 import { 
   BrowserRouter as Roteador,
   Route,
   Routes,
-  Navigate,
-  useLocation
+  Navigate
 } from 'react-router-dom';
 
 function RotasProtegidas({children}) {
-  const {pathname} = useLocation();
 
-  let cond = true;
-
-  if(!cond) {
-    return <Navigate to="/login"/>
-  }
   return children
 }
 
