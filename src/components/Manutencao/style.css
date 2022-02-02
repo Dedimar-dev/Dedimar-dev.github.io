@@ -1,0 +1,10 @@
+.manutencao {
+  width: 65vw;
+  height: 100vh;
+  background-image: url('../../assets/imagem_manutencao.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position:absolute;
+  left: 20rem;
+  top: 0;
+}
