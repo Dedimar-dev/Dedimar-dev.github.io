@@ -7,8 +7,7 @@ import { GlobalProvider } from './context/GlobalContext';
 import { 
   BrowserRouter as Roteador,
   Route,
-  Routes,
-  Navigate
+  Routes
 } from 'react-router-dom';
 
 function RotasProtegidas({children}) {
