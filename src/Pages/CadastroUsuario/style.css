@@ -35,7 +35,8 @@
   background-color: #fff;
   border-radius: 0.7rem;
   width: 45rem;
-  height: 60rem;
+  min-height: 60rem;
+  max-height: 65rem;
   padding-bottom: 2rem;
   color: rgb(0, 0, 0);
   gap: 4rem;
@@ -49,14 +50,13 @@
 .div-form-senha,
 .div-form-nome_loja {
   display: flex;
+  position: relative;
   flex-direction: column;
   font-size: 1.7rem;
   gap: 1rem;
 }
 
-.form-cadastro input {
-  all: unset;
-  box-sizing: border-box;
+.form-cadastro_input {
   border: 0.2rem solid rgb(138, 130, 130);
   border-radius: 0.5rem;
   width: 40rem;
@@ -64,13 +64,12 @@
   background-color: #fff;
 }
 
-.form-cadastro input:focus {
-  border: 0.3rem solid rgb(102, 95, 95);
+.form-cadastro_input:focus {
+  border: 0.22rem solid rgb(102, 95, 95);
   box-shadow: 0.1rem 0.1rem 0.7rem black;
 }
 
 .form-cadastro button {
-  all: unset;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,3 +82,11 @@
   padding: 1.5rem;
 }
 
+.form-cadastro button:focus{
+  transform: scale(1.01);
+  box-shadow: 0.1rem 0.1rem 0.3rem black;
+}
+
+.erroInput {
+  border: 0.2rem solid rgb(216, 15, 15);
+}
