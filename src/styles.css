@@ -35,3 +35,40 @@ label {
   font-size: 1.7rem;
   font-weight: bold;
 }
+
+button{
+  all: unset;
+  cursor: pointer;
+}
+
+input {
+  all: unset;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.mensagemErroInput {
+  display: flex;
+  margin-top: 0rem;
+  margin-bottom: -2rem;
+  color: rgb(204, 35, 35);
+  font-weight: bold;
+}
+
+.navigate-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  height: 1rem;
+  gap: 0.3rem;
+}
+
+.navigate-login span {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
