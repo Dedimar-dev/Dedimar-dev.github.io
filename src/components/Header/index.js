@@ -16,8 +16,13 @@ function Header() {
     token
   } = useGlobal();
 
-  const iniciais = atualUsuario.nome.substr(0, 2).toUpperCase()
-  const usuario = atualUsuario.nome.substr(0, atualUsuario.nome.indexOf(' '))
+  let iniciais = ''
+  let usuario = ''
+
+  if (atualUsuario) {
+      iniciais = atualUsuario.nome.substr(0, 2).toUpperCase()
+      usuario = atualUsuario.nome.substr(0, atualUsuario.nome.indexOf(' '))
+  }
 
   const pesquisarProduto = (event) => {
     let valorInput = event.target.value.trim();

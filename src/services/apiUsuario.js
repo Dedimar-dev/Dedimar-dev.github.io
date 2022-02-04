@@ -126,8 +126,6 @@ const loguinUsuario = async (ParametrosParaLogin) => {
       return
     }
 
-    console.log(message)
-
     const senhaInvalida = procuraPalavra(message, 'senha');
     const emailInvalido = procuraPalavra(message, 'email');
 

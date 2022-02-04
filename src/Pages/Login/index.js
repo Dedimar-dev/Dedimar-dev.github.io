@@ -54,7 +54,6 @@ function Login() {
       senha 
     }
     loguinUsuario(ParametrosParaLogin);
-    return
   }
 
   return (
