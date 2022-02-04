@@ -3,20 +3,29 @@ import useGlobal from '../../hooks/useGlobal';
 import { listarProdutos, listarProdutosPesquisado } from '../../services/apiProdutos';
 import SearchIcon from '@mui/icons-material/Search';
 import logo from '../../assets/logo_DS.png'
+import { useNavigate } from 'react-router-dom';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function Header() {
-
+  const navigate = useNavigate();
   const {
-    setDadosTodosProdutos
+    setDadosTodosProdutos,
+    setExpirationToken,
+    atualUsuario,
+    setToken,
+    token
   } = useGlobal();
+
+  const iniciais = atualUsuario.nome.substr(0, 2).toUpperCase()
+  const usuario = atualUsuario.nome.substr(0, atualUsuario.nome.indexOf(' '))
 
   const pesquisarProduto = (event) => {
     let valorInput = event.target.value.trim();
 
     if (valorInput.length > 0) {
-        listarProdutosPesquisado(setDadosTodosProdutos, valorInput);
+        listarProdutosPesquisado(setDadosTodosProdutos, valorInput, token);
     } else {
-        listarProdutos(setDadosTodosProdutos); 
+        listarProdutos(setDadosTodosProdutos, token); 
     }
    
   }
@@ -33,6 +42,21 @@ function Header() {
           onChange={pesquisarProduto} 
           placeholder="Sanduíche"
         />
+      </div>
+      <div className="div-nome_usuario">
+          <h2>{iniciais}</h2>
+          <h1>{usuario}</h1>
+          <LogoutIcon 
+            cursor="pointer"
+            fontSize='large'
+            onClick={() => {
+            setToken('');
+            navigate('/login');
+            setExpirationToken('')
+          }}
+          >
+            Sair
+          </LogoutIcon>
       </div>
     
   </header>
