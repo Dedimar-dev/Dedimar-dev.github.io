@@ -5,14 +5,17 @@ async function cadastrarProduto(
   setDadosTodosProdutos, 
   setModalCadastroProduto,
   setModalEdicaoProduto,
-  limparInputs
+  limparInputs,
+  token
 ) {
 
   try {
     const pedido = await fetch(`${url_Base}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': token
+
       },
 
       body: JSON.stringify(dados)
@@ -24,7 +27,7 @@ async function cadastrarProduto(
       setModalEdicaoProduto(false);
       limparInputs()
     }
-      listarProdutos(setDadosTodosProdutos);
+      listarProdutos(setDadosTodosProdutos, token);
 
   } catch ({ message }) {
     console.log(message)
@@ -38,14 +41,17 @@ async function atualizarProduto(
   setDadosTodosProdutos, 
   setModalEdicaoProduto, 
   setModalCadastroProduto,
-  limparInputs
+  limparInputs,
+  token
 ) {
 
   try {
     const pedido = await fetch(`${url_Base}/${id}`, {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': token
+
       },
       body: JSON.stringify(dados)
     });
@@ -56,7 +62,7 @@ async function atualizarProduto(
       setModalEdicaoProduto(false);
       limparInputs()
     }
-    listarProdutos(setDadosTodosProdutos);
+    listarProdutos(setDadosTodosProdutos, token);
 
   } catch ({ message }) {
     console.log(message)
@@ -64,31 +70,34 @@ async function atualizarProduto(
 
 }
 
-async function listarProdutos(setDadosTodosProdutos) {
+async function listarProdutos(setDadosTodosProdutos, token) {
 
   try {
     const response = await fetch(`${url_Base}`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': token
       }
     });
 
     const dados = await response.json();
-    setDadosTodosProdutos(dados)
+    setDadosTodosProdutos(dados);
+    console.log(dados.message)
   } catch ({ message }) {
     console.log(message)
   }
 
 }
 
-async function listarProdutosPesquisado(setDadosTodosProdutos, nome) {
+async function listarProdutosPesquisado(setDadosTodosProdutos, nome, token) {
 
   try {
     const response = await fetch(`${url_Base}/${nome}`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': token
       }
     });
 
@@ -101,18 +110,19 @@ async function listarProdutosPesquisado(setDadosTodosProdutos, nome) {
 }
 
 
-async function deletarProduto(id, setCondicao, setDadosTodosProdutos) {
+async function deletarProduto(id, setCondicao, setDadosTodosProdutos, token) {
 
   try {
     await fetch(`${url_Base}/${id}`, {
       method: 'DELETE',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': token
       }
     });
 
     setCondicao(false);
-    listarProdutos(setDadosTodosProdutos);
+    listarProdutos(setDadosTodosProdutos, token);
 
   } catch ({ message }) {
     console.log(message)
