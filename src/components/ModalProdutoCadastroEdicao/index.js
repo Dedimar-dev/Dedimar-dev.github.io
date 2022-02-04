@@ -5,7 +5,7 @@ import {
     cadastrarProduto,
     atualizarProduto,
 } from '../../services/apiProdutos';
-import trataNomeProduto from "../../utils/trataNomeProduto";
+import trataTexto from "../../utils/trataTexto";
 
 export default function ModalProdutoCadastroEdicao() {
     const {
@@ -19,14 +19,15 @@ export default function ModalProdutoCadastroEdicao() {
         erroDadosProduto,
         setErroDadosProduto,
         setDadosTodosProdutos,
-        dadosTodosProdutos
+        dadosTodosProdutos,
+        token
     } = useGlobal();
 
     useEffect(() => {
         if (modalEdicaoProduto) {
             const produtoClicado = dadosTodosProdutos.find((produto) => produto.id === id);
             setDadosProduto({
-                nome: trataNomeProduto(produtoClicado.nome),
+                nome: trataTexto    (produtoClicado.nome),
                 descricao: produtoClicado.descricao,
                 quantidade: produtoClicado.quantidade,
                 valor: produtoClicado.valor,
@@ -50,7 +51,8 @@ export default function ModalProdutoCadastroEdicao() {
                 setDadosTodosProdutos,
                 setModalCadastroProduto,
                 setModalEdicaoProduto,
-                limparInputs
+                limparInputs,
+                token
             )
         }
 
@@ -61,7 +63,8 @@ export default function ModalProdutoCadastroEdicao() {
                 setDadosTodosProdutos,
                 setModalEdicaoProduto,
                 setModalCadastroProduto,
-                limparInputs
+                limparInputs,
+                token
             )
 
         }

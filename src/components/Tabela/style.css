@@ -56,9 +56,9 @@
 .line-items {
    width: 20rem;
    margin-bottom: 2rem;
-   white-space:nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
+   height: 6rem;       
+   overflow:hidden; 
+   cursor: pointer;
 }
 
 .delete-icon{
@@ -84,7 +84,7 @@
 
 .div-confirm-delete {
     position: absolute;
-    top: 3rem;
+    top: 1.5rem;
     right: 0rem;
 }
 

@@ -7,7 +7,8 @@ export default function ModalConfirmar({idModal}) {
         id,
         condicao,
         setCondicao,
-        setDadosTodosProdutos
+        setDadosTodosProdutos,
+        token
     } = useGlobal();
 
   return(
@@ -16,7 +17,7 @@ export default function ModalConfirmar({idModal}) {
           <p>Apagar Produto?</p>
           <div className="div-buttons">
               <button 
-                  onClick={() =>  deletarProduto(id, setCondicao, setDadosTodosProdutos) } 
+                  onClick={() =>  deletarProduto(id, setCondicao, setDadosTodosProdutos, token) } 
                   className="btn-actions-confirm-delete sim">
                   Sim
               </button>

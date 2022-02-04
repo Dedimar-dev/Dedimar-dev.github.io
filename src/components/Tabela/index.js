@@ -4,7 +4,7 @@ import editar from '../../assets/icons8-editar2.svg';
 import excluir from '../../assets/icons8-lixo4.svg';
 import ModalConfirmar from "../ModalConfirmar";
 import { listarProdutos} from '../../services/apiProdutos';
-import trataNomeProduto from "../../utils/trataNomeProduto";
+import trataTexto from "../../utils/trataTexto";
 import useGlobal from "../../hooks/useGlobal";
 import Variants from "../Variants";
 
@@ -19,14 +19,15 @@ function Tabela() {
         setDadosTodosProdutos,
         modalEdicaoProduto,
         modalCadastroProduto,
+        token
       } = useGlobal();
 
     useEffect(() => {
-        listarProdutos(setDadosTodosProdutos);
+        listarProdutos(setDadosTodosProdutos, token);
     }, [setDadosTodosProdutos]);
 
     useEffect(() => {
-        listarProdutos(setDadosTodosProdutos);
+        listarProdutos(setDadosTodosProdutos, token);
     }, [condicao, modalCadastroProduto, modalEdicaoProduto, setDadosTodosProdutos]);
 
     return (
@@ -46,9 +47,9 @@ function Tabela() {
                 </div>
             </div>
             <div className="table-body">
-               { dadosTodosProdutos.length === 0 && <Variants/>}
-                {dadosTodosProdutos && dadosTodosProdutos.map(info => {
-                    const nome = trataNomeProduto(info.nome)
+               { !dadosTodosProdutos && <Variants/>}
+                {dadosTodosProdutos.length > 0 && dadosTodosProdutos.map(info => {
+                    const nome = trataTexto(info.nome)
                     return (
                         <div key={info.id} className="table-line">
                             <div className="line-items">{nome}</div>
