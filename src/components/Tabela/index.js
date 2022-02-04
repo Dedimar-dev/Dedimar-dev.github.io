@@ -24,11 +24,11 @@ function Tabela() {
 
     useEffect(() => {
         listarProdutos(setDadosTodosProdutos, token);
-    }, [setDadosTodosProdutos]);
+    }, [setDadosTodosProdutos, token]);
 
     useEffect(() => {
         listarProdutos(setDadosTodosProdutos, token);
-    }, [condicao, modalCadastroProduto, modalEdicaoProduto, setDadosTodosProdutos]);
+    }, [condicao, modalCadastroProduto, modalEdicaoProduto, setDadosTodosProdutos, token]);
 
     return (
           <div className="table">

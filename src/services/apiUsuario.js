@@ -5,7 +5,6 @@ const cadastrarUsuario = async (ParametrosParaCadatroUsuario) => {
   const {
     dadosUsuario,
     setMensagemDeErroSenha,
-    setMensagemApiCadastroUsuario,
     setDadosUsuario,
     setConfirmarSenha,
     procuraPalavra,

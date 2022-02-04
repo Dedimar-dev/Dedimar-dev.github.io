@@ -18,7 +18,6 @@ function CadastroUsuarioSenha() {
     setErroDadosUsuario,
     mensagemDeErroSenha,
     setMensagemDeErroSenha,
-    mensagemApiCadastroUsuario,
     setMensagemApiCadastroUsuario
   } = useGlobal();
 
