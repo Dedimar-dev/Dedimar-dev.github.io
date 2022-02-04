@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(211, 24, 24);
+  background: linear-gradient(rgb(214, 206, 206), rgb(83, 81, 81) );
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -14,6 +14,10 @@
   padding-left: 8rem;
   width: 45%;
   height: 100%;
+}
+
+.form-login div {
+  position: relative;
 }
 
 .form-login {
@@ -37,23 +41,21 @@
   gap: 1rem;
 }
 
-.form-login input {
-  all: unset;
-  box-sizing: border-box;
+.form-login_input {
   border: 0.2rem solid rgb(138, 130, 130);
   border-radius: 0.5rem;
   width: 40rem;
   padding: 0.8rem;
+  color: black;
   background-color: #fff;
 }
 
-.form-login input:focus {
+.form-login_input:focus {
   border: 0.3rem solid rgb(102, 95, 95);
   box-shadow: 0.1rem 0.1rem 0.7rem black;
 }
 
 .form-login button {
-  all: unset;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,6 +67,7 @@
   width: 40rem;
   padding: 1.5rem;
 }
+
 .div-form-cadastre_se {
   display: flex;
   align-items: center;
@@ -74,6 +77,11 @@
   gap: 2rem;
 }
 
+.div-form-cadastre_se span {
+  color: rgb(14, 14, 100);
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .div-img {
   width: 50vw;
@@ -81,4 +89,8 @@
   background-image: url('../../assets/imagem_login.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.erroInput {
+  border: 0.2rem solid rgb(216, 15, 15);
 }
