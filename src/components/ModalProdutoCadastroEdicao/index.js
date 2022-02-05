@@ -121,7 +121,9 @@ export default function ModalProdutoCadastroEdicao() {
 
                     <div className='container_produto_input_descricao'>
                         <label htmlFor='produto_input_descricao_cadastro'>Descrição*</label>
-                        <input
+                        <textarea
+                            rows="4" 
+                            cols="10"
                             id="produto_input_descricao_cadastro"
                             className={` 
                           ${erroDadosProduto.erroDescricao ? 'border-red ' : ''}
