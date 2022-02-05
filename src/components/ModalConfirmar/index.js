@@ -12,12 +12,17 @@ export default function ModalConfirmar({idModal}) {
     } = useGlobal();
 
   return(
-      <div id={ idModal } className={ `container-confirm-delete ${ idModal === id && condicao? '':'none' }` }>
+      <div 
+        id={ idModal } 
+        onClick={event => event.stopPropagation()}
+        className={ `container-confirm-delete 
+            ${ idModal === id && condicao? '':'none' }` 
+        }>
           <img className="seta" src={ setaModal } alt="seta" />
           <p>Apagar Produto?</p>
           <div className="div-buttons">
               <button 
-                  onClick={() =>  deletarProduto(id, setCondicao, setDadosTodosProdutos, token) } 
+                  onClick={() => deletarProduto(id, setCondicao, setDadosTodosProdutos, token)} 
                   className="btn-actions-confirm-delete sim">
                   Sim
               </button>

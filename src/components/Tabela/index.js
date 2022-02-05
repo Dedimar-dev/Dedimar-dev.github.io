@@ -15,6 +15,7 @@ function Tabela() {
         setCondicao,
         setModalEdicaoProduto,
         setModalCadastroProduto,
+        setModalDetalheProduto,
         dadosTodosProdutos, 
         setDadosTodosProdutos,
         modalEdicaoProduto,
@@ -51,18 +52,26 @@ function Tabela() {
                 {dadosTodosProdutos.length > 0 && dadosTodosProdutos.map(info => {
                     const nome = trataTexto(info.nome)
                     return (
-                        <div key={info.id} className="table-line">
+                        <div key={info.id} 
+                            className="table-line"
+                            onClick={() => {
+                                setModalDetalheProduto(true);
+                                setId(Number(info.id));
+                            }}
+                        >
                             <div className="line-items">{nome}</div>
-                            <div className="line-items">{info.descricao}</div>
+                            <div className="line-items items-descricao">{info.descricao}</div>
                             <div className="line-items">{(info.valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</div>
                             <div className="line-items">{info.quantidade}</div>
-                            <div className="line-items">
+                            <div className="line-items edit-delete-icon"
+                                 onClick={(event) => {
+                                    event.stopPropagation();
+                            }}>
                                 <img id={info.id}
-                                    style={{ cursor: 'pointer' }}
-                                    onClick={(e) => {
+                                    onClick={(event) => {
                                         setModalEdicaoProduto(true);
                                         setModalCadastroProduto(false);
-                                        setId(Number(e.target.id));
+                                        setId(Number(event.target.id));
                                     }}
                                     className="edit-icon"
                                     src={editar}
@@ -70,10 +79,9 @@ function Tabela() {
                                 />
 
                                 <img id={info.id}
-                                    style={{ cursor: 'pointer' }}
                                     className="delete-icon"
-                                    onClick={(e) => {
-                                        setId(Number(e.target.id));
+                                    onClick={(event) => {
+                                        setId(Number(event.target.id));
                                         setCondicao(true);
                                     }}
                                     src={excluir} alt="delete-icon"
