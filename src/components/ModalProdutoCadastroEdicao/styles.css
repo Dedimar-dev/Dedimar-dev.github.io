@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     background-color: #919a964d;
+    font-family: 'Nunito', sans-serif;
     backdrop-filter: blur(0.2rem);
     min-height: 100vh;
     width: 100vw;
@@ -12,6 +13,7 @@
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 1;
 }
   
 .card_produto_modal {
@@ -67,7 +69,6 @@
   height: 3.5rem;
   left: 0rem;
   top: 0rem;
-  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;
@@ -97,7 +98,6 @@
   left: 0rem;
   top: 0rem;
   margin-top: 1.2rem;
-  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;
@@ -122,7 +122,6 @@
   align-items: center;
   position: relative;
   width: 36rem;
-  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;
@@ -182,7 +181,6 @@
   border: 0.1rem solid #DEDEE9;
   box-sizing: border-box;
   border-radius: 1rem;
-  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.8rem;
@@ -203,7 +201,6 @@
 .card_produto_modal label,
 .card_produto_modal span,
 .card_produto_modal input {
-  font-family: 'Nunito', sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
@@ -218,7 +215,6 @@
 
 .msg-input {
   margin: 0rem;
-  font-family: 'Nunito', sans-serif;
   font-size: 1.2rem;
   line-height: 2rem;
   color: #E70000;
