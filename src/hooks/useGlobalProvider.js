@@ -4,6 +4,7 @@ import { useLocalStorage } from 'react-use';
 export default function useGlobalProvider() {
   const [modalCadastroProduto, setModalCadastroProduto] = useState(false);
   const [modalEdicaoProduto, setModalEdicaoProduto] = useState(false);
+  const [modalDetalheProduto, setModalDetalheProduto] = useState(false);
   const [condicao, setCondicao] = useState(false);
   const [id, setId] = useState(0);
   const [dadosTodosProdutos, setDadosTodosProdutos] = useState([]);
@@ -60,6 +61,9 @@ export default function useGlobalProvider() {
 
     modalEdicaoProduto,
     setModalEdicaoProduto,
+
+    modalDetalheProduto, 
+    setModalDetalheProduto,
 
     condicao,
     setCondicao,
