@@ -40,7 +40,6 @@ function Header() {
     <img src={logo} alt="Logo" />
      <div className="div-pesquisa">
         <SearchIcon fontSize="large" className="lupa"/>
-        <label htmlFor="pesquisa">Pesquisar Produto</label>
         <input 
           id="pesquisa" 
           type="text" 
