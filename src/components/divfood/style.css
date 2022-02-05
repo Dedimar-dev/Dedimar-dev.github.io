@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 800px;
+  width: 50rem;
   min-height: 100vh;
 }
 
@@ -25,7 +25,7 @@
   box-shadow: 1px 1px 10px black;
   position: fixed;
   bottom: 10px;
-  right: 54.5%;
+  left: 25rem;
   background: rgb(204, 33, 33);
   color: #fff;
 }

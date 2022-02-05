@@ -19,9 +19,9 @@ export default function DivFood() {
     const tela = document.querySelector('canvas');
     const pincel = tela.getContext('2d');
 
-    pincel.font = '130px Georgia';
-    pincel.fillStyle = '#fff';
-    pincel.fillText('DSFood', 250, 120);
+    pincel.font = '100px Georgia';
+    pincel.fillStyle = '#e0d7d7';
+    pincel.fillText('DSFood', 270, 120);
   }
 
   return (
