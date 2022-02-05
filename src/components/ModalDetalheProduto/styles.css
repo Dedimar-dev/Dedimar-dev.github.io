@@ -1,0 +1,166 @@
+.backgorund_card_produto_modal {
+    margin: 0rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #919a964d;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.8rem;
+    backdrop-filter: blur(0.2rem);
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+textarea {
+  all: unset;
+}
+  
+.card_detalhe_produto_modal {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  position: fixed;
+  top: 10rem;
+  width: 40rem;
+  min-height: 40rem;
+  padding: 2rem 5rem;
+  background: #FFFFFF;
+  border-radius: 2rem;
+  gap: 3rem;
+}
+
+.titulo_produto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  padding: 0rem;
+  height: 4rem;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: #3F3F55;
+  gap: 2rem;
+}
+
+.close {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  width: 1.8rem;
+}
+
+.container_produto_nome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: static;
+  width: 36rem;
+  height: 3.5rem;
+  left: 0rem;
+  top: 0rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #3F3F55;
+}
+
+.produto_nome {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  position: static;
+  width: 36rem;
+  padding: 2rem 1.2rem;
+}
+
+.container_produto_descricao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: static;
+  width: 36rem;
+  left: 0rem;
+  top: 0rem;
+  margin-top: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #3F3F55;
+}
+
+.produto_descricao {
+  display: flex;
+  align-items: center;
+  width: 36rem;
+  padding: 1rem 1.2rem ;
+  background: #FFFFFF;
+}
+
+.containers_produto_quantidade_valor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 36rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  color: #3F3F55;
+}
+
+.container_produto_quantidade,
+.container_produto_valor {
+  display: flex;
+  flex-direction: column;
+  width: 16.5rem;
+}
+
+.produto_valor,
+.produto_quantidade {
+  width: 16.5rem;
+  height: 4.4rem;
+  background: #FFFFFF;
+  padding: 1rem 1.2rem;
+}
+
+.produto_valor {
+  padding: 1rem 3rem;
+}
+
+.simbolo-dinheiro {
+  position: absolute;
+  top: 1.9rem;
+  right: 14rem;
+  font-size: 1.4rem;
+  color: #3F3F55;
+}
+
+.card_produto_modal span,
+.card_produto_modal input {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+}

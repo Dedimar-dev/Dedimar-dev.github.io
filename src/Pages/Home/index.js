@@ -3,7 +3,7 @@ import Tabela from '../../components/Tabela';
 import DivFood from '../../components/divfood';
 import ModalProdutoCadastroEdicao from '../../components/ModalProdutoCadastroEdicao';
 import Header from '../../components/Header';
-// import Manutencao from '../../components/Manutencao';
+import ModalDetalheProduto from '../../components/ModalDetalheProduto';
 
 function Home() {
 
@@ -12,7 +12,8 @@ function Home() {
       <Header/>
       <DivFood />
       <Tabela />
-      <ModalProdutoCadastroEdicao />        
+      <ModalProdutoCadastroEdicao /> 
+      <ModalDetalheProduto/>       
     </div>
   );
 }
