@@ -32,6 +32,7 @@ function RotasProtegidas({children}) {
   if (expirationToken === 'jwt malformed' || 
       expirationToken === 'Não autorizado' || 
       expirationToken === 'invalid signature' ||
+      expirationToken === 'jwt expired' ||
       !token) {
     navigate('/login')
   }
