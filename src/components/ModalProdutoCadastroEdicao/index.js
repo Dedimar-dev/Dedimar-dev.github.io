@@ -6,6 +6,7 @@ import {
     atualizarProduto,
 } from '../../services/apiProdutos';
 import trataTexto from "../../utils/trataTexto";
+import { validaDadosInputProduto } from "../../utils/validaDadosInputProduto";
 
 export default function ModalProdutoCadastroEdicao() {
     const {
@@ -35,7 +36,7 @@ export default function ModalProdutoCadastroEdicao() {
         }
     }, [modalEdicaoProduto, dadosTodosProdutos, id, setDadosProduto])
 
-    function limparInputs() {
+    const limparInputs = () => {
         setDadosProduto({
             nome: '',
             descricao: '',
@@ -44,7 +45,30 @@ export default function ModalProdutoCadastroEdicao() {
         });
     };
 
-    const handleSubmit = () => {
+    const handleFecharModal = () => {
+        limparInputs();
+        setModalEdicaoProduto(false);
+        setModalCadastroProduto(false);
+        setErroDadosProduto({...erroDadosProduto,
+            erroNome: false,
+            erroValor: false,
+            erroDescricao: false,
+            erroQuantidade: false
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+       
+        const ParametrosParaValidacao = {
+            setErroDadosProduto,
+            erroDadosProduto,
+            dadosProduto
+        }
+    
+        const dadosInvalidos = validaDadosInputProduto(ParametrosParaValidacao);
+        if (dadosInvalidos) return
+    
         if (modalCadastroProduto) {
             cadastrarProduto(
                 dadosProduto,
@@ -55,7 +79,7 @@ export default function ModalProdutoCadastroEdicao() {
                 token
             )
         }
-
+    
         if (modalEdicaoProduto) {
             atualizarProduto(
                 id,
@@ -66,9 +90,8 @@ export default function ModalProdutoCadastroEdicao() {
                 limparInputs,
                 token
             )
-
         }
-
+        return
     };
 
     return (
@@ -79,17 +102,16 @@ export default function ModalProdutoCadastroEdicao() {
             }
         >
             {(modalCadastroProduto || modalEdicaoProduto) &&
-                <div className='card_produto_modal'>
+                <form 
+                    onSubmit={handleSubmit}
+                    className='card_produto_modal'
+                >
                     <div className='titulo_produto'>
                         <h3>{modalCadastroProduto ? 'Cadastro de Produto' : 'Edição de Produto'}</h3>
                         <button
-                            className='close'
+                            id='close'
                             style={{ cursor: "pointer" }}
-                            onClick={() => {
-                                limparInputs();
-                                setModalEdicaoProduto(false);
-                                setModalCadastroProduto(false);
-                            }}
+                            onClick={handleFecharModal}
                         >
                             X
                         </button>
@@ -117,13 +139,14 @@ export default function ModalProdutoCadastroEdicao() {
                                 });
                             }}
                         />
+                         {erroDadosProduto.erroNome &&
+                            <p className="msg-input">Este campo deve ser preenchido</p>
+                        }
                     </div>
 
                     <div className='container_produto_input_descricao'>
                         <label htmlFor='produto_input_descricao_cadastro'>Descrição*</label>
-                        <textarea
-                            rows="4" 
-                            cols="10"
+                        <input
                             id="produto_input_descricao_cadastro"
                             className={` 
                           ${erroDadosProduto.erroDescricao ? 'border-red ' : ''}
@@ -196,9 +219,9 @@ export default function ModalProdutoCadastroEdicao() {
                         </div>
                     </div>
 
-                    <div className="div-erro-vencimento-valor">
+                    <div className="div-erro-quantidade-valor">
                         <div>
-                            {erroDadosProduto.erroVencimento &&
+                            {erroDadosProduto.erroQuantidade &&
                                 <p className="msg-input">Este campo deve ser preenchido</p>
                             }
                         </div>
@@ -210,25 +233,21 @@ export default function ModalProdutoCadastroEdicao() {
                     </div>
 
                     <div className='container_produto_buttons_confirmar'>
-                        <div
-                            className='produto_button_cancelar'
-                            onClick={() => {
-                                limparInputs();
-                                setModalEdicaoProduto(false);
-                                setModalCadastroProduto(false);
-                            }}>
-                            <span> Cancelar</span>
-                        </div>
+                        <span 
+                            className='produto_button_cancelar'  
+                            onClick={handleFecharModal}
+                        > 
+                            Cancelar
+                        </span>
 
-                        <div
+                        <button 
                             className='produto_button_confirmar'
-                            onClick={() => {
-                                handleSubmit();
-                            }}>
-                            <span> Aplicar</span>
-                        </div>
+                        > 
+                            Aplicar
+                        </button>
+
                     </div>
-                </div>}
+                </form>}
         </div>
     );
 };

@@ -50,13 +50,14 @@
   gap: 2rem;
 }
 
-.close {
+#close {
   all: unset;
   box-sizing: border-box;
   position: absolute;
   top: 3rem;
   right: 4rem;
-  width: 1.8rem;
+  width: 4rem;
+
 }
 
 .container_produto_input_nome {
@@ -109,7 +110,7 @@
   display: flex;
   align-items: center;
   width: 36rem;
-  padding: 2rem 1rem ;
+  padding: 2rem 1rem 5rem;
   background: #FFFFFF;
   border: 0.1rem solid #D0D5DD;
   box-sizing: border-box;
@@ -199,6 +200,7 @@
 }
 
 .card_produto_modal label,
+.card_produto_modal button,
 .card_produto_modal span,
 .card_produto_modal input {
   font-size: 1.4rem;
@@ -207,6 +209,10 @@
   line-height: 2rem;
   letter-spacing: 0em;
   text-align: left;
+}
+
+.card_produto_modal button {
+  z-index: 1;
 }
 
 .border-red {
@@ -220,15 +226,17 @@
   color: #E70000;
 }
 
-.div-erro-vencimento-valor {
+.div-erro-quantidade-valor {
   display: flex;
   justify-content: space-between;
   width: 36rem;
   gap: 2.5rem;
 }
 
-.div-erro-vencimento-valor p {
-  font-size: 1.14rem;
+.div-erro-quantidade-valor p {
+  font-size: 1.07rem;
+  font-weight: bold;
+  margin-top: 0;
 }
 
 .flex {
