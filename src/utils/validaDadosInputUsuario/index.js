@@ -1,10 +1,10 @@
-const validaDadosInputUsuario = (ParâmetrosParaValidacao) => {
+const validaDadosInputUsuario = (ParametrosParaValidacao) => {
 
  const {
   erroDadosUsuario,
   setErroDadosUsuario,
   dadosUsuario
- } = ParâmetrosParaValidacao;
+ } = ParametrosParaValidacao;
 
  const {
   nome,

@@ -1,4 +1,4 @@
-const validaSenhaInputUsuario = (ParâmetrosParaValidacao) => {
+const validaSenhaInputUsuario = (ParametrosParaValidacao) => {
 
   const {
     erroDadosUsuario,
@@ -6,7 +6,7 @@ const validaSenhaInputUsuario = (ParâmetrosParaValidacao) => {
     dadosUsuario,
     confirmarSenha,
     setMensagemDeErroSenha
-  } = ParâmetrosParaValidacao;
+  } = ParametrosParaValidacao;
 
   const { senha } = dadosUsuario;
 

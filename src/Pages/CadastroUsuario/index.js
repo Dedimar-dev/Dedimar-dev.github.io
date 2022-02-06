@@ -21,13 +21,13 @@ function CadastroUsuario() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     
-    const ParâmetrosParaValidacao = {
+    const ParametrosParaValidacao = {
       erroDadosUsuario,
       setErroDadosUsuario,
       dadosUsuario
     }
 
-    const dadosInvalidos = validaDadosInputUsuario(ParâmetrosParaValidacao);
+    const dadosInvalidos = validaDadosInputUsuario(ParametrosParaValidacao);
     if (dadosInvalidos) return
     
     const emailValido = emailRegex.test(dadosUsuario.email);
