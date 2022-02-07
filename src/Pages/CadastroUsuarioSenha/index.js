@@ -123,7 +123,7 @@ function CadastroUsuarioSenha() {
 
           <div className="navigate-login">
             <p>Já possui uma conta? Faça seu</p>
-            <span onClick={() => navigate('/login')}>
+            <span onClick={() => navigate('/')}>
               Login
             </span>
           </div>

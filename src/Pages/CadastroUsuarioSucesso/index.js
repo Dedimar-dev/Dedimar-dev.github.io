@@ -16,7 +16,7 @@ function CadastroUsuarioSucesso() {
         <h1>Cadastro realizado com sucesso!</h1>
       </div>
       <button
-        onClick={() => navigate('/login')}
+        onClick={() => navigate('/')}
         className="cadastro_sucesso_button"
       >
         Ir para Login
