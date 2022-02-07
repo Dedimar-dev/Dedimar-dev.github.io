@@ -83,7 +83,6 @@ async function listarProdutos(setDadosTodosProdutos, token) {
 
     const dados = await response.json();
     setDadosTodosProdutos(dados);
-    console.log(dados.message)
   } catch ({ message }) {
     console.log(message)
   }
