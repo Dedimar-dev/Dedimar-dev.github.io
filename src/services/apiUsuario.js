@@ -34,8 +34,6 @@ const cadastrarUsuario = async (ParametrosParaCadatroUsuario) => {
       navigate('/cadastrosucesso')
 
     } else {
-
-      console.log(message)
       const existeMensagemSenha = procuraPalavra(message, 'senha');
       if (existeMensagemSenha) {
         setMensagemDeErroSenha(message);
@@ -119,10 +117,10 @@ const loguinUsuario = async (ParametrosParaLogin) => {
 
     const {status} = pedido;
     const {token, message} = await pedido.json();
+    setToken(token);
 
     if (status === 200) {
-      setToken(token);
-      navigate('/');
+      navigate('/home');  
       return
     }
 
@@ -169,6 +167,7 @@ const validar_token = async (token, setExpirationToken, setAtualUsuario) => {
 
     if (status === 200) {
       setAtualUsuario(resposta);
+      setExpirationToken('');
       return
     }
    
