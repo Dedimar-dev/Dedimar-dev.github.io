@@ -54,9 +54,9 @@ function Header() {
             cursor="pointer"
             fontSize='large'
             onClick={() => {
-            setToken('');
-            navigate('/login');
-            setExpirationToken('')
+              setToken('');
+              setExpirationToken('')
+              navigate('/');
           }}
           >
             Sair
