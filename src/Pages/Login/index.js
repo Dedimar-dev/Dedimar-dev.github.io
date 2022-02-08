@@ -6,10 +6,12 @@ import useGlobal from '../../hooks/useGlobal';
 import { validaDadosInputLoginUsuario } from '../../utils/validaDadosInputLoginUsuario';
 import { procuraPalavra } from '../../utils/procuraPalavra';
 import trataTexto  from '../../utils/trataTexto';
+import CircularIndeterminate from '../../components/CircularProgress';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [carregando, setCarregando] = useState(false);
   const navigate = useNavigate();
   const emailRegex = /^[a-zA-Z0-9.]+@[a-z0-9]+\.[a-z]+/;
 
@@ -19,6 +21,7 @@ function Login() {
     setErroDadosUsuarioLogin,
     mensagemErroLogin, 
     setMensagemErroLogin,
+    setExpirationToken
   } = useGlobal();
 
   const handleSubmit = async (event) => {
@@ -43,17 +46,23 @@ function Login() {
       return
     }
 
+    setCarregando(true);
+
     const ParametrosParaLogin = {
+      setExpirationToken,
       setMensagemErroLogin,
       mensagemErroLogin, 
       procuraPalavra,
       trataTexto,
-      navigate,
       setToken,
       email, 
       senha 
     }
-    loguinUsuario(ParametrosParaLogin);
+
+    await loguinUsuario(ParametrosParaLogin);
+
+    navigate('/home');
+    setCarregando(false);
   }
 
   return (
@@ -142,7 +151,10 @@ function Login() {
             </p>
           </div>
 
-          <button>Entrar</button>
+          <button>
+            {!carregando && <span>Entrar</span>}
+            {carregando && <CircularIndeterminate/>}
+          </button>
 
           <div className="div-form-cadastre_se">
             <p>Ainda não possui uma conta?</p>
