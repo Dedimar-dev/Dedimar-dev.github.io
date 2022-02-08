@@ -6,7 +6,7 @@ import useGlobal from '../../hooks/useGlobal';
 import { validaDadosInputLoginUsuario } from '../../utils/validaDadosInputLoginUsuario';
 import { procuraPalavra } from '../../utils/procuraPalavra';
 import trataTexto  from '../../utils/trataTexto';
-import CircularIndeterminate from '../../components/CircularProgress';
+import CircularIndeterminate from '../../components/CircularIndeterminate';
 
 function Login() {
   const [email, setEmail] = useState('');
