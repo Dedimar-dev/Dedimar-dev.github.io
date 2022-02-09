@@ -37,8 +37,11 @@ function RotasProtegidas({ children }) {
     expirationToken === 'jwt expired' ||
     !token) {
 
-    if (pathname !== 'home') {
-      return (<Navigate to="/" />)
+    if (pathname !== '/cadastrodados' ||
+      pathname !== '/cadastrosenha' ||
+      pathname !== '/cadastrosucesso' ||
+      pathname !== '/' ) {
+       return (<Navigate to="/" />)
     }
   };
 
