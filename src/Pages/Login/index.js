@@ -59,9 +59,14 @@ function Login() {
       senha 
     }
 
-    await loguinUsuario(ParametrosParaLogin);
+   const condicao = await loguinUsuario(ParametrosParaLogin);
 
-    navigate('/home');
+   if (condicao) {
+      navigate('/home');
+      setEmail('')
+      setSenha('')
+   }
+ 
     setCarregando(false);
   }
 

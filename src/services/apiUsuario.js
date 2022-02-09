@@ -98,7 +98,6 @@ const loguinUsuario = async (ParametrosParaLogin) => {
     mensagemErroLogin,
     procuraPalavra,
     trataTexto,
-    navigate,
     setToken,
     email, 
     senha 
@@ -117,34 +116,33 @@ const loguinUsuario = async (ParametrosParaLogin) => {
 
     const {status} = pedido;
     const {token, message} = await pedido.json();
-    setToken(token);
 
     if (status === 200) {
-      navigate('/home');  
-      return
-    }
+      setToken(token);
+      return true
+    } else {
+      const senhaInvalida = procuraPalavra(message, 'senha');
+      const emailInvalido = procuraPalavra(message, 'email');
 
-    const senhaInvalida = procuraPalavra(message, 'senha');
-    const emailInvalido = procuraPalavra(message, 'email');
+      if (emailInvalido && senhaInvalida) {
+        setMensagemErroLogin({...mensagemErroLogin, 
+          notEmailSenha: message
+        });
+        return
+      }
 
-    if (emailInvalido && senhaInvalida) {
+      if (senhaInvalida) {
+        setMensagemErroLogin({...mensagemErroLogin, 
+          senhaInvalida: trataTexto(message)
+        });
+        return
+      }
+
       setMensagemErroLogin({...mensagemErroLogin, 
         notEmailSenha: message
       });
-
-      return
     }
-
-    if (senhaInvalida) {
-      setMensagemErroLogin({...mensagemErroLogin, 
-        senhaInvalida: trataTexto(message)
-      });
-      return
-    }
-
-    setMensagemErroLogin({...mensagemErroLogin, 
-      notEmailSenha: message
-    });
+    
   } catch ({ message }) {
     console.log(message)
   }
