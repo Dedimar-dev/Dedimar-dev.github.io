@@ -23,6 +23,7 @@
   align-items:left;
   justify-content: center;
 }
+
 .form-cadastro_senha div {
   position: relative;
 }
@@ -31,9 +32,9 @@
   display: flex;
   flex-direction: column;
   align-items:center;
+  justify-content: center;
   position: fixed;
   right: 20rem;
-  justify-content: center;
   background-color: #fff;
   border-radius: 0.7rem;
   width: 45rem;
@@ -90,4 +91,40 @@
 
 .erroInput {
   border: 0.2rem solid rgb(216, 15, 15);
+}
+
+@media (max-width: 1200px) {
+
+  .container-cadastro_senha {
+    justify-content: center;
+  }
+
+  .container-cadastro_senha-titulo {
+    display: none;
+  }
+  
+  .form-cadastro_senha  {
+    position: relative;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+}
+
+@media (max-width: 480px) {
+
+  .form-cadastro_senha {
+    position: fixed;
+    width: 0rem;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .form-cadastro_senha_input,
+  .form-cadastro_senha button  {
+    width: 30rem;
+  }
+
 }

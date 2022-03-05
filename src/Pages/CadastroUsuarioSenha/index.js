@@ -62,7 +62,7 @@ function CadastroUsuarioSenha() {
             <h3>Gerencie sua loja de forma fácil e rápida</h3>
           </div>
 
-          <div className="div-form-email">
+          <div className="div-form-senha">
             <label htmlFor="Senha">Senha*</label>
             <input
               className={`
@@ -87,7 +87,7 @@ function CadastroUsuarioSenha() {
             </p>
           </div>
 
-          <div className="div-form-email">
+          <div className="div-form-senha">
             <label htmlFor="confirme_senha">Confirme sua Senha*</label>
             <input
               className={`
