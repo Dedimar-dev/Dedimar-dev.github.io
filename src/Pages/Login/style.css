@@ -6,6 +6,7 @@
   min-width: 100vw;
   min-height: 100vh;
 }
+
 .div-form-login {
   display: flex;
   flex-direction: column;
@@ -93,4 +94,38 @@
 
 .erroInput {
   border: 0.2rem solid rgb(216, 15, 15);
+}
+
+@media (max-width: 960px) {
+  .div-form-login {
+    padding-left: 0rem;
+  }
+
+  .div-img {
+   display: none;
+  }
+
+  .div-form-cadastre_se {
+    justify-content: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .div-form-titulo h3{
+    font-size: 1.5rem;
+  }
+
+  .form-login_input {
+    width: 30rem;
+  }
+
+  .form-login button {
+    width: 30rem;
+  } 
+
+  .div-form-cadastre_se {
+    font-size: 1.5rem;
+    width: 30rem;
+    gap: 1rem;
+  }
 }
