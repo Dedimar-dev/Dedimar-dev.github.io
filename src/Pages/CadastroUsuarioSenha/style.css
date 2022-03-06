@@ -1,7 +1,6 @@
 .container-cadastro_senha {
   display: flex;
   align-items: center;
-  background-color: rgb(211, 24, 24);
   min-width: 100vw;
   min-height: 100vh;
   background-image: url('../../assets/cadastro_senha.png');
@@ -24,10 +23,6 @@
   justify-content: center;
 }
 
-.form-cadastro_senha div {
-  position: relative;
-}
-
 .form-cadastro_senha {
   display: flex;
   flex-direction: column;
@@ -40,10 +35,14 @@
   width: 45rem;
   min-height: 50rem;
   max-height: 55rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   color: rgb(0, 0, 0);
   box-shadow: 0.2rem 0.2rem 4rem black;
   gap: 4rem;
+}
+
+.form-cadastro_senha div {
+  position: relative;
 }
 
 .div-form-titulo {
@@ -119,11 +118,13 @@
     background-color: #fff;
   }
   .form-cadastro_senha {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255,0);
     position: absolute;
     width: 0rem;
     min-width: 100%;
     min-height: 100%;
+    padding-bottom: 0rem;
+
   }
 
   .form-cadastro_senha_input,
