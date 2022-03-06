@@ -114,9 +114,13 @@
 }
 
 @media (max-width: 480px) {
-
+  .container-cadastro_senha {
+    background-image: none;
+    background-color: #fff;
+  }
   .form-cadastro_senha {
-    position: fixed;
+    background-color: rgba(255, 255, 255, 0);
+    position: absolute;
     width: 0rem;
     min-width: 100%;
     min-height: 100%;
