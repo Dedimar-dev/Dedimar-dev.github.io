@@ -61,7 +61,7 @@
   border-radius: 0.5rem;
   width: 40rem;
   padding: 0.8rem;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .form-cadastro_senha_input:focus {
